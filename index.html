@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="aside">
+            <div class="title">
+               <h2>Crea tu mapa</h2>
+            </div>
+            <div class="section1">
+                <h3>Selecciona un archivo</h3>
+                <input class="buttonUpload" type="file" id="uploader" accept=".csv" />
+            </div>
+            <div class="section2">
+                <h3>Selecciona un color</h3>
+                <div class="container-color">
+                    <input type="color" name="myMapColorMin" class="colorin" id=myMapColorMin value="#A9F0FA" active>
+                    <input type="color" name="myMapColorMax" class="colorin" id=myMapColorMax value="#FA4848" active>
+                </div>  
+                <button class="buttonClickRange" onClick="changeColorNewMap()">Cambiar rango</button>
+            </div>
+            <div class="section3">
+                <h3 class="fontSizeSty">Aplicar una capa superior</h3>
+                <div class="switch">
+                    <div class="switch__1">
+                      <input id="switch-1" type="checkbox" class="opcionradio" value="si" checked="">
+                      <label for="switch-1"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="section4">
+                <div class="containerColor">
+                    <h3 class="fontSizeSty">Color de linea</h3>
+                     <input type="color" class="coloron" name="myColorLine" id=myColorLine value="#F1F1F1">
+                </div>  
+            </div>
+            <div class="section5">
+                <h3 class="fontSizeSty">Tamaño de línea</h3>
+                <div class="slider">
+                    <div class="slider__box">
+                      <span class="slider__btn" name="find" id=find></span>
+                      <span class="slider__color"></span>
+                      <span class="slider__tooltip">50%</span>
+                    </div>
+                  </div>
+            </div>
+            <div class="section6">
+                <button id='saveButton'>Exportar imagen</button>
+            </div>
+        </aside>
+        <main class="main">
+            <div class="container2 d2" id="d2">
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./datos/lib/legend.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="index.js"></script>
+</body>
+</html>
